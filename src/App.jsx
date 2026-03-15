@@ -206,12 +206,12 @@ Even though I know you only few years it feels like I have known you since I was
 ];
 
 const memories = [
-  "The first conversation that lasted until sunrise — neither of us willing to say goodnight 🌙",
-  "The moment you said something so precisely true about me that I had to sit with it for days 💭",
-  "Every voice note. The way your voice sounds unhurried. Like time bends for you 🎙️",
-  "The night I realized I was in trouble — beautifully, irreversibly in trouble 🔥",
-  "When you laughed and I thought: I want to be the reason for that sound for the rest of my life ✨",
-  "Every time you chose vulnerability. Every time you trusted me with something real 🌹",
+  "I remember our first conversation—it just felt easy, like we clicked.🌙",
+  "Our first call stuck with me, just hearing your voice made everything better.💭",
+  "I still remember the first voice note you sent me—it made everything feel more real.🎙️",
+  "Every time you shared a piece of your writing on snapchat, it made me see things differently.",
+  "I was in Daman, chatting with you while enjoying the sea—it made the whole view feel even better.✨",
+  "We planned to be together and imagined the whole thing… but it just didn’t happen.",
   "The first time I caught myself planning a future that had you in every version of it 🌍",
   "Right now. This moment. You reading this. Already a memory I'll keep 💖",
 ];
