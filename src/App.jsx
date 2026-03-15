@@ -2077,10 +2077,10 @@ export default function App() {
               className="text-gradient-gold"
               style={{ fontStyle: "italic" }}
             >
-              Favourite
+              Somya
             </span>
             <br />
-            <span className="text-gradient">Person</span>
+            <span className="text-gradient"></span>
           </h1>
           <p
             style={{
