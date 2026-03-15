@@ -2077,10 +2077,10 @@ export default function App() {
               className="text-gradient-gold"
               style={{ fontStyle: "italic" }}
             >
-              Somya
+              Favourite
             </span>
             <br />
-            <span className="text-gradient"></span>
+            <span className="text-gradient">Person</span>
           </h1>
           <p
             style={{
@@ -2156,7 +2156,111 @@ export default function App() {
         </div>
       </section>
 
-      {/* COUNTDOWN  */}
+      {/* PHOTO SECTION */}
+      <section
+        className="section-fade"
+        style={{ padding: "60px 16px 20px", position: "relative", zIndex: 1 }}
+      >
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "12px",
+              textTransform: "uppercase",
+              letterSpacing: "4px",
+              color: "#C2185B",
+              marginBottom: "32px",
+            }}
+          >
+            the person behind every word above
+          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "20px",
+              justifyItems: "center",
+            }}
+          >
+            {["/gf1.png", "/gf2.png"].map((src, i) => (
+              <div
+                key={i}
+                style={{
+                  width: "100%",
+                  maxWidth: "380px",
+                  position: "relative",
+                }}
+              >
+                {/* Decorative ring */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: "-8px",
+                    borderRadius: "28px",
+                    background:
+                      "linear-gradient(135deg,#C2185B,#E91E63,#D4AF37)",
+                    opacity: 0.25,
+                    zIndex: 0,
+                  }}
+                />
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    borderRadius: "22px",
+                    overflow: "hidden",
+                    boxShadow: "0 20px 60px rgba(194,24,91,0.25)",
+                    aspectRatio: "3/4",
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt="my person"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top",
+                      display: "block",
+                      transition: "transform 0.6s ease",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.04)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
+                  />
+                  {/* subtle overlay */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to top, rgba(194,24,91,0.12) 0%, transparent 40%)",
+                      pointerEvents: "none",
+                    }}
+                  />
+                </div>
+                {/* caption */}
+                <p
+                  style={{
+                    textAlign: "center",
+                    marginTop: "14px",
+                    fontFamily: "'Dancing Script',cursive",
+                    fontSize: "1.1rem",
+                    color: "#C2185B",
+                  }}
+                >
+                  {i === 0 ? "always so stunning 🌸" : "even more stunning 💕"}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COUNTDOWN */}
       <section
         className="section-fade"
         style={{
@@ -2445,6 +2549,178 @@ export default function App() {
               Open Game Room ↗
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* REAL PHOTO GALLERY */}
+      <section
+        className="section-fade"
+        style={{ padding: "80px 16px", position: "relative", zIndex: 1 }}
+      >
+        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+            <p
+              style={{
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "4px",
+                color: "#C2185B",
+                marginBottom: "8px",
+              }}
+            >
+              the real her
+            </p>
+            <h2
+              className="text-gradient"
+              style={{
+                fontFamily: "'Playfair Display',serif",
+                fontSize: "clamp(2rem,6vw,3.5rem)",
+                fontWeight: 900,
+              }}
+            >
+              Every Frame, Perfect
+            </h2>
+            <p
+              style={{
+                marginTop: "8px",
+                color: "#aaa",
+                fontStyle: "italic",
+                fontSize: "13px",
+                fontFamily: "'Dancing Script',cursive",
+                fontSize: "1.1rem",
+              }}
+            >
+              I could stare at these forever and still not be done
+            </p>
+          </div>
+
+          {/* Three photos — cinematic layout */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "24px",
+              alignItems: "start",
+            }}
+          >
+            {[
+              {
+                src: "/real1.JPG",
+                caption: "that sleepy smile 🌙",
+                rotate: "-2deg",
+                pos: "top",
+              },
+              {
+                src: "/real2.JPG",
+                caption: "the one that stops me mid-sentence 💙",
+                rotate: "1.5deg",
+                pos: "center 20%",
+              },
+              {
+                src: "/real3.JPG",
+                caption: "impossibly beautiful 🌹",
+                rotate: "-1deg",
+                pos: "top",
+              },
+            ].map((photo, i) => (
+              <div
+                key={i}
+                className="card-hover"
+                style={{
+                  position: "relative",
+                  transform: `rotate(${photo.rotate})`,
+                  transition: "all 0.4s cubic-bezier(0.34,1.56,0.64,1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "rotate(0deg) scale(1.03)";
+                  e.currentTarget.style.zIndex = "10";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = `rotate(${photo.rotate}) scale(1)`;
+                  e.currentTarget.style.zIndex = "1";
+                }}
+              >
+                {/* Polaroid frame */}
+                <div
+                  style={{
+                    background: "#fff",
+                    borderRadius: "4px",
+                    padding: "10px 10px 44px 10px",
+                    boxShadow:
+                      "0 10px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(194,24,91,0.1)",
+                  }}
+                >
+                  <div
+                    style={{
+                      borderRadius: "2px",
+                      overflow: "hidden",
+                      aspectRatio: "3/4",
+                      background: "#f0f0f0",
+                    }}
+                  >
+                    <img
+                      src={photo.src}
+                      alt="her"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: photo.pos,
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  {/* Polaroid caption area */}
+                  <div style={{ paddingTop: "10px", textAlign: "center" }}>
+                    <p
+                      style={{
+                        fontFamily: "'Dancing Script',cursive",
+                        fontSize: "1rem",
+                        color: "#5d3a3a",
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {photo.caption}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tape effect top center */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-10px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "48px",
+                    height: "18px",
+                    background: "rgba(255,183,197,0.55)",
+                    borderRadius: "2px",
+                    backdropFilter: "blur(2px)",
+                    zIndex: 2,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Quote below gallery */}
+          <p
+            style={{
+              textAlign: "center",
+              marginTop: "48px",
+              fontFamily: "'Playfair Display',serif",
+              fontStyle: "italic",
+              fontSize: "clamp(1rem,3vw,1.3rem)",
+              color: "#C2185B",
+              maxWidth: "600px",
+              margin: "48px auto 0",
+              lineHeight: 1.7,
+            }}
+          >
+            "She doesn't even know how she looks when she's just being herself.
+            That's the best part."
+          </p>
         </div>
       </section>
 
